@@ -22,3 +22,5 @@ const isPalindrome = (string) => {
 
   return string === invertedLine;
 };
+
+isPalindrome('проверяемая строка');
