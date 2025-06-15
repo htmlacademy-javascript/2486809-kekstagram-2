@@ -107,3 +107,5 @@ const getPhotos = () => {
   }
   return photos;
 };
+
+getPhotos();
