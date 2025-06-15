@@ -108,4 +108,4 @@ const getPhotos = () => {
   return photos;
 };
 
-console.log(getPhotos());
+getPhotos();
