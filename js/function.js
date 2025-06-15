@@ -11,7 +11,7 @@ const isPalindrome = (string) => {
   string = string.replaceAll(' ', '').toLowerCase();
   let invertedLine = '';
 
-  for (let i = string.lenth - 1; i >= 0; i--) {
+  for (let i = string.length - 1; i >= 0; i--) {
     invertedLine += string[i];
   }
 
@@ -19,3 +19,5 @@ const isPalindrome = (string) => {
 };
 
 isPalindrome('проверяемая строка');
+
+
