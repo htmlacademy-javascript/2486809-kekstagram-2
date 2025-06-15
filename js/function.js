@@ -20,3 +20,4 @@ const isPalindrome = (string) => {
 
 isPalindrome('проверяемая строка');
 
+
