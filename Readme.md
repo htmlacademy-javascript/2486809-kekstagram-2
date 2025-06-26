@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Николай Шундик](https://up.htmlacademy.ru/javascript-individual/2/user/2486809).
-* Наставник: `Виктория Никитина`.
+* Наставник: [Виктория Никитина] (https://htmlacademy.ru/profile/id1217273).
 
 ---
 
