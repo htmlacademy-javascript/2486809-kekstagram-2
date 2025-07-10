@@ -32,3 +32,4 @@ export const getPhotos = () => {
   }
   return photos;
 };
+
