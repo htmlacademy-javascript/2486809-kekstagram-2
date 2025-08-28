@@ -1,7 +1,7 @@
 import { openModal } from './modal.js';
 
 const cardTemplate = document.querySelector('#picture').content.querySelector('.picture');
-const container = document.querySelector('.pictures');
+const containerNode = document.querySelector('.pictures');
 
 let localPhotos;
 
@@ -17,16 +17,12 @@ export const renderCards = (photos) => {
     card.querySelector('.picture__likes').textContent = likes;
 
     card.dataset.id = id;
-    // card.addEventListener('click', () => {
-    //   openModal({ url, likes, description, comments });
-    // });
-
     fragment.append(card);
   });
-  container.append(fragment);
+  containerNode.append(fragment);
 };
 
-container.addEventListener('click', (evt) => {
+containerNode.addEventListener('click', (evt) => {
   const card = evt.target.closest('.picture');
   if (card) {
     const id = Number(card.dataset.id);

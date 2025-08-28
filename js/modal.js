@@ -1,26 +1,26 @@
 import { COMMENTS_STEP } from './constants.js';
 
-const modal = document.querySelector('.big-picture');
-const closeButtonNode = modal.querySelector('.big-picture__cancel');
+const bigPictureNode = document.querySelector('.big-picture');
+const closeButtonNode = bigPictureNode.querySelector('.big-picture__cancel');
 const body = document.body;
-const imageNode = modal.querySelector('.big-picture__img img');
-const likesNode = modal.querySelector('.likes-count');
-const captionNode = modal.querySelector('.social__caption');
-const commentTemplate = modal.querySelector('.social__comment');
-const commentsListNode = modal.querySelector('.social__comments');
-const commentsTotalNode = modal.querySelector('.social__comment-total-count');
-const commentsStatisticNode = modal.querySelector('.social__comment-shown-count');
-const loaderNode = modal.querySelector('.social__comments-loader');
+const imageNode = bigPictureNode.querySelector('.big-picture__img img');
+const likesNode = bigPictureNode.querySelector('.likes-count');
+const captionNode = bigPictureNode.querySelector('.social__caption');
+const commentTemplate = bigPictureNode.querySelector('.social__comment');
+const commentsListNode = bigPictureNode.querySelector('.social__comments');
+const commentsTotalNode = bigPictureNode.querySelector('.social__comment-total-count');
+const commentsStatisticNode = bigPictureNode.querySelector('.social__comment-shown-count');
+const loaderNode = bigPictureNode.querySelector('.social__comments-loader');
 
 let localComments;
 let commentsStatistic;
 
 const showModal = (isShown = true) => {
   if (isShown) {
-    modal.classList.remove('hidden');
+    bigPictureNode.classList.remove('hidden');
     body.classList.add('modal-open');
   } else {
-    modal.classList.add('hidden');
+    bigPictureNode.classList.add('hidden');
     body.classList.remove('modal-open');
   }
 };
