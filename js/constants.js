@@ -18,6 +18,7 @@ export const MAX_LIKES = 200;
 export const MIN_COMMENTS = 0;
 export const MAX_COMMENTS = 30;
 
+export const COMMENTS_STEP = 5;
 
 export const MESSAGES = [
   'Всё отлично!',
