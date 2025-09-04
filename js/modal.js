@@ -1,29 +1,21 @@
 import { COMMENTS_STEP } from './constants.js';
+import { removeEscapeControle, setEscapeControle } from './escape-controle.js';
+import { showModal } from './utils.js';
 
-const modal = document.querySelector('.big-picture');
-const closeButtonNode = modal.querySelector('.big-picture__cancel');
-const body = document.body;
-const imageNode = modal.querySelector('.big-picture__img img');
-const likesNode = modal.querySelector('.likes-count');
-const captionNode = modal.querySelector('.social__caption');
-const commentTemplate = modal.querySelector('.social__comment');
-const commentsListNode = modal.querySelector('.social__comments');
-const commentsTotalNode = modal.querySelector('.social__comment-total-count');
-const commentsStatisticNode = modal.querySelector('.social__comment-shown-count');
-const loaderNode = modal.querySelector('.social__comments-loader');
+const modalNode = document.querySelector('.big-picture');
+const closeButtonNode = modalNode.querySelector('.big-picture__cancel');
+
+const imageNode = modalNode.querySelector('.big-picture__img img');
+const likesNode = modalNode.querySelector('.likes-count');
+const captionNode = modalNode.querySelector('.social__caption');
+const commentTemplate = modalNode.querySelector('.social__comment');
+const commentsListNode = modalNode.querySelector('.social__comments');
+const commentsTotalNode = modalNode.querySelector('.social__comment-total-count');
+const commentsStatisticNode = modalNode.querySelector('.social__comment-shown-count');
+const loaderNode = modalNode.querySelector('.social__comments-loader');
 
 let localComments;
 let commentsStatistic;
-
-const showModal = (isShown = true) => {
-  if (isShown) {
-    modal.classList.remove('hidden');
-    body.classList.add('modal-open');
-  } else {
-    modal.classList.add('hidden');
-    body.classList.remove('modal-open');
-  }
-};
 
 const renderStatistic = () => {
   commentsStatisticNode.textContent = commentsStatistic;
@@ -46,7 +38,6 @@ const renderComments = () => {
     userpicNode.alt = name;
     newCommentNode.querySelector('.social__text').textContent = message;
     fragment.append(newCommentNode);
-
     commentsStatistic++;
   });
   commentsListNode.append(fragment);
@@ -67,12 +58,16 @@ const renderModal = ({ url, likes, description, comments }) => {
 };
 
 export const openModal = ({ url, likes, description, comments }) => {
-  showModal();
+  showModal(modalNode);
   renderModal({ url, likes, description, comments });
+  setEscapeControle(() => {
+    showModal(modalNode, false);
+  });
 };
 
 closeButtonNode.addEventListener('click', () => {
-  showModal(false);
+  showModal(modalNode, false);
+  removeEscapeControle();
 });
 
 loaderNode.addEventListener('click', () => {
