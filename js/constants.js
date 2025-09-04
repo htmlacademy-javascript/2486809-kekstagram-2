@@ -1,59 +1,106 @@
-export const DESCRIPTIONS = [
-  'Утро',
-  'Солнышко',
-  'Котенок',
-];
+export const Effects = {
+  CHROME: 'chrome',
+  SEPIA: 'sepia',
+  MARVIN: 'marvin',
+  PHOBOS: 'phobos',
+  HEAT: 'heat',
+  NONE: 'none'
+};
 
-export const PHOTOS_COUNT = 25;
+export const EffectsSettings = {
+  [Effects.CHROME]: {
+    style: 'grayscale',
+    units: '',
+    slider: {
+      range: {
+        min: 0,
+        max: 1,
+      },
+      start: 1,
+      step: 0.1,
+    }
+  },
+  [Effects.SEPIA]: {
+    style: 'sepia',
+    units: '',
+    slider: {
+      range: {
+        min: 0,
+        max: 1,
+      },
+      start: 1,
+      step: 0.1,
+    }
+  },
+  [Effects.MARVIN]: {
+    style: 'invert',
+    units: '%',
+    slider: {
+      range: {
+        min: 0,
+        max: 100,
+      },
+      start: 100,
+      step: 1,
+    }
+  },
+  [Effects.PHOBOS]: {
+    style: 'blur',
+    units: 'px',
+    slider: {
+      range: {
+        min: 0,
+        max: 3,
+      },
+      start: 3,
+      step: 0.1,
+    }
+  },
+  [Effects.HEAT]: {
+    style: 'brightness',
+    units: '',
+    slider: {
+      range: {
+        min: 1,
+        max: 3,
+      },
+      start: 3,
+      step: 0.1,
+    }
+  },
+};
 
-export const MIN_AVATAR = 1;
-export const MAX_AVATAR = 6;
+export const Scale = {
+  MIN: 25,
+  MAX: 100,
+  STEP: 25,
+  DEFAULT: 100,
+  FACTOR: 0.01
+};
 
-export const MIN_ID = 0;
-export const MAX_ID = 1000000;
-
-export const MIN_LIKES = 15;
-export const MAX_LIKES = 200;
-
-export const MIN_COMMENTS = 0;
-export const MAX_COMMENTS = 30;
+export const MAX_DESCRIPTION = 140;
+export const HASHTAG_FORMULA = /^#[a-zа-яё0-9]{1,19}$/i;
+export const MAX_HASHTAGS = 5;
 
 export const COMMENTS_STEP = 5;
 
-export const MESSAGES = [
-  'Всё отлично!',
-  'В целом всё неплохо. Но не всё.',
-  'Когда вы делаете фотографию, хорошо бы убирать палец из кадра.' ,
-  'В конце концов это просто непрофессионально.',
-  'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
-  'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
-  'Лица у людей на фотке перекошены, как будто их избивают.' ,
-  'Как можно было поймать такой неудачный момент?!',
-];
+export const ALERT_DELAY = 5000;
 
-export const NAMES = [
-  'Алексей',
-  'Иван',
-  'Дмитрий',
-  'Юлия',
-  'Андрей',
-  'Николай',
-  'Михаил',
-  'Егор',
-  'Артем',
-  'Владимир',
-  'Александр',
-  'Максим',
-  'Олег',
-  'Юрий',
-  'Павел',
-  'Саша',
-  'Светлана',
-  'Вика',
-  'Маша',
-  'Елена',
-  'Оля',
-  'Татьяна',
-  'Наталья',
-  'Анна',
-];
+export const Popups = {
+  SUCCESS: 'success',
+  ERROR: 'error'
+};
+
+export const SubmitButtonText = {
+  IDLE: 'Опубликовать',
+  SENDING: 'Публикую...'
+};
+
+export const Filters = {
+  DEFAULT: 'filter-default',
+  RANDOM: 'filter-random',
+  DISCUSSED: 'filter-discussed'
+};
+
+export const RANDOM_COUNT = 10;
+export const RANDOM_FACTOR = 0.5;
